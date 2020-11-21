@@ -2,6 +2,8 @@ package com.eduardojr.movieflixbds.resources;
 
 import java.net.URI;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,54 +20,54 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.eduardojr.movieflixbds.dto.GenreDTO;
-import com.eduardojr.movieflixbds.services.GenreService;
+import com.eduardojr.movieflixbds.dto.MovieDTO;
+import com.eduardojr.movieflixbds.services.MovieService;
 
 @RestController
-@RequestMapping(value="/genres")
-public class GenreResource {
+@RequestMapping(value="/movies")
+public class MovieResource {
 
 	@Autowired
-	private GenreService service;
+	private MovieService service;
 	
     @GetMapping
-    public ResponseEntity<Page<GenreDTO>> findAll(
+    public ResponseEntity<Page<MovieDTO>> findAll(
+            @RequestParam(value = "genreId", defaultValue = "0") Long genreId,
             @RequestParam(value = "page", defaultValue = "0") Integer page,
             @RequestParam(value = "size", defaultValue = "12") Integer size,
             @RequestParam(value = "direction", defaultValue = "ASC") String direction,
-            @RequestParam(value = "orderBy", defaultValue = "name") String orderBy
+            @RequestParam(value = "orderBy", defaultValue = "title") String orderBy
     		) {
         PageRequest pageRequest = PageRequest.of(page, size, Sort.Direction.valueOf(direction), orderBy);
 
-        Page<GenreDTO> list = service.findAllPaged(pageRequest);
+        Page<MovieDTO> list = service.findAllPaged(genreId, pageRequest);
 
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<GenreDTO> findById(@PathVariable Long id) {
-        GenreDTO genreDTO = service.findById(id);
-        return ResponseEntity.ok().body(genreDTO);
+    public ResponseEntity<MovieDTO> findById(@PathVariable Long id) {
+        MovieDTO movieDTO = service.findById(id);
+        return ResponseEntity.ok().body(movieDTO);
     }
 
     @PostMapping
-    public ResponseEntity<GenreDTO> insert(@RequestBody GenreDTO dto) {
+    public ResponseEntity<MovieDTO> insert(@Valid @RequestBody MovieDTO dto) {
         dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder
-        		.fromCurrentRequest()
-        		.path("/{id}")
+        		.fromCurrentRequest().path("/{id}")
         		.buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<GenreDTO> update(@PathVariable Long id, @RequestBody GenreDTO dto) {
+    public ResponseEntity<MovieDTO> update(@PathVariable Long id, @Valid @RequestBody MovieDTO dto) {
         dto = service.update(id, dto);
         return ResponseEntity.ok().body(dto);
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<GenreDTO> delete(@PathVariable Long id) {
+    public ResponseEntity<MovieDTO> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

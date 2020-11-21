@@ -14,15 +14,13 @@ public class GenreDTO implements Serializable {
 	}
 
 	public GenreDTO(Long id, String name) {
-		super();
 		this.id = id;
 		this.name = name;
 	}
 	
 	public GenreDTO(Genre entity) {
-		super();
-		this.id = entity.getId();
-		this.name = entity.getName();
+		id = entity.getId();
+		name = entity.getName();
 	}
 
 	public Long getId() {
