@@ -2,6 +2,7 @@ package com.eduardojr.movieflixbds.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,8 @@ public class Review implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(columnDefinition = "TEXT")
 	private String text;
 	
 	@ManyToOne
@@ -32,7 +35,6 @@ public class Review implements Serializable {
 	}
 
 	public Review(Long id, String text, Movie movie, User user) {
-		super();
 		this.id = id;
 		this.text = text;
 		this.movie = movie;

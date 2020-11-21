@@ -51,7 +51,6 @@ public class User implements UserDetails, Serializable {
 	}
 
 	public User(Long id, String name, String email, String password) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -152,6 +151,5 @@ public class User implements UserDetails, Serializable {
 	@Override
 	public boolean isEnabled() {
 		return true;
-	}	
-
+	}
 }
