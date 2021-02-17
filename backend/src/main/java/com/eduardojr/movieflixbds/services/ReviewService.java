@@ -16,6 +16,7 @@ import com.eduardojr.movieflixbds.repositories.ReviewRepository;
 import com.eduardojr.movieflixbds.repositories.UserRepository;
 import com.eduardojr.movieflixbds.services.exceptions.DatabaseException;
 import com.eduardojr.movieflixbds.services.exceptions.ResourceNotFoundException;
+import com.eduardojr.movieflixbds.utils.SecurityUtils;
 
 @Service
 public class ReviewService {
@@ -47,14 +48,18 @@ public class ReviewService {
         Review entity = new Review();
         try {
             entity.setMovie(movieRepository.getOne(dto.getMovieId()));
-            entity.setUser(userRepository.getOne(dto.getUserId()));
+            entity.setUser(userRepository.getOne(loggedUserId()));
             entity.setText(dto.getText());
 
             repository.save(entity);
 
             return new ReviewDTO(entity);
         } catch (DataIntegrityViolationException e) {
-            throw new DatabaseException("Movie Id: " + dto.getMovieId() + " or User Id: " + dto.getUserId() + " invalid!");
+            throw new DatabaseException("Invalid Movie Id: " + dto.getMovieId());
         }
-    }	
+    }
+	
+	private Long loggedUserId() {
+		return userRepository.findByEmail(SecurityUtils.getLoggedUserName()).getId();
+	}
 }

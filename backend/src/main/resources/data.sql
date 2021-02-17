@@ -24,9 +24,9 @@ INSERT INTO tb_movie (title, sub_title, year, genre_id, img_url, synopsis) VALUE
 INSERT INTO tb_movie (title, sub_title, year, genre_id, img_url, synopsis) VALUES ('The Godfather','An offer you can not refuse.', 1972, 2, 'https://image.tmdb.org/t/p/w533_and_h300_bestv2/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg', 'Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family.');
 INSERT INTO tb_movie (title, sub_title, year, genre_id, img_url, synopsis) VALUES ('Forrest Gump','Life is like a box of chocolates. You never know what you are gonna get', 1994, 2, 'https://image.tmdb.org/t/p/w533_and_h300_bestv2/tlEFuIlaxRPXIYVHXbOSAMCfWqk.jpg', 'A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.');
 
-INSERT INTO tb_review (text, movie_id, user_id) VALUES ('Excellent!', 1, 1);
-INSERT INTO tb_review (text, movie_id, user_id) VALUES ('So so', 2, 1);
-INSERT INTO tb_review (text, movie_id, user_id) VALUES ('So impressive!', 3, 1);
+INSERT INTO tb_review (text, movie_id, user_id) VALUES ('Excellent!', 1, 2);
+INSERT INTO tb_review (text, movie_id, user_id) VALUES ('So so', 2, 2);
+INSERT INTO tb_review (text, movie_id, user_id) VALUES ('So impressive!', 3, 2);
 INSERT INTO tb_review (text, movie_id, user_id) VALUES ('Very good', 4, 2);
 INSERT INTO tb_review (text, movie_id, user_id) VALUES ('Recommended', 5, 2);
 INSERT INTO tb_review (text, movie_id, user_id) VALUES ('I Do not like this', 6, 2);

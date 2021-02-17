@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.validation.constraints.NotBlank;
 
 import com.eduardojr.movieflixbds.entities.Review;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ReviewDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -15,23 +16,26 @@ public class ReviewDTO implements Serializable {
 	private String text;
 	
 	private Long movieId;
-	private Long userId;
+	//private Long userId;
+	
+	@JsonProperty("user")
+	private UserDTO userDto;
 	
 	public ReviewDTO() {
 	}
 
-	public ReviewDTO(Long id, String text, Long movieId, Long userId) {
+	public ReviewDTO(Long id, String text, Long movieId, UserDTO userDto) {
 		this.id = id;
 		this.text = text;
 		this.movieId = movieId;
-		this.userId = userId;
+		this.userDto = userDto;
 	}
 	
 	public ReviewDTO(Review entity) {
 		id = entity.getId();
 		text = entity.getText();
 		movieId = entity.getMovie().getId();
-		userId = entity.getUser().getId();
+		userDto = new UserDTO(entity.getUser());
 	}
 
 	public Long getId() {
@@ -58,11 +62,11 @@ public class ReviewDTO implements Serializable {
 		this.movieId = movieId;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public UserDTO getUserDto() {
+		return userDto;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserDto(UserDTO userDto) {
+		this.userDto = userDto;
 	}	
 }
