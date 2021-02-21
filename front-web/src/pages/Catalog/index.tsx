@@ -8,6 +8,7 @@ import { makePrivateRequest } from '../../core/utils/request';
 import CardMovies from './components/CardMovies';
 import ButtonLogout from '../../core/components/ButtonLogout';
 import Navbar from '../../core/components/Navbar';
+import FilterMovies, { FilterForm } from './components/FilterMovies'
 import Pagination from '../../core/components/Pagination';
 import './styles.scss';
 
@@ -17,11 +18,12 @@ const Catalog = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [activePage, setActivePage] = useState(0);
     
-    const getMovies = useCallback(() => {
+    const getMovies = useCallback((filter?: FilterForm) => {
         
         const params = {
             page: activePage,
             size: 4,
+            genreId: filter?.genreId
         }
 
         setIsLoading(true);
@@ -43,13 +45,14 @@ const Catalog = () => {
                 <ButtonLogout />
             </Navbar>
             <div className="catalog-container">
+                <FilterMovies onSearch={filter => getMovies(filter)} />
                 <div className="catalog-container-card">                    
                     {moviesResponse?.content.map(movie => (
                         <Link to={`/movies/${movie.id}`}>
                             <CardMovies movie={movie} key={movie.id} />
                         </Link>
-                        ))
-                    })
+                        )
+                    )}
                 </div>
             </div>
             {moviesResponse && <Pagination
