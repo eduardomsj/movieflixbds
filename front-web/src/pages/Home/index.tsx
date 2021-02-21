@@ -15,8 +15,7 @@ const Home = () => {
                             Avalie Filmes
                         </h1>
                         <h3 className="home-subtitle">
-                            Faça parte do nosso catálogo de divulgação e <br/>
-                            aumente a venda dos seus produtos
+                            Diga o que você achou do seu filme favorito
                         </h3>
                         <div className="home-image">
                             <Image />

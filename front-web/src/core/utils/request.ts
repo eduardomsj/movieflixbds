@@ -37,7 +37,6 @@ export const makePrivateRequest = ({ method = 'GET', url, data, params}: Request
     return makeRequest({method, url, data, params, headers});
 }
 
-
 export const makeLogin = (loginData: LoginData) => {    
     const token = `${CLIENT_ID}:${CLIENT_SECRET}`;
     
