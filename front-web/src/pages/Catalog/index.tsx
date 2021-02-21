@@ -8,16 +8,19 @@ import { makePrivateRequest } from '../../core/utils/request';
 import CardMovies from './components/CardMovies';
 import ButtonLogout from '../../core/components/ButtonLogout';
 import Navbar from '../../core/components/Navbar';
+import Pagination from '../../core/components/Pagination';
 import './styles.scss';
 
 const Catalog = () => {
 
     const [moviesResponse, setMoviesResponse] = useState<MoviesResponse>();
     const [isLoading, setIsLoading] = useState(false);
+    const [activePage, setActivePage] = useState(0);
     
     const getMovies = useCallback(() => {
         
         const params = {
+            page: activePage,
             size: 4,
         }
 
@@ -28,7 +31,7 @@ const Catalog = () => {
             .finally(() => {
                 setIsLoading(false);
             })
-    }, []);
+    }, [activePage]);
 
     useEffect(() => {
         getMovies();
@@ -49,8 +52,13 @@ const Catalog = () => {
                     })
                 </div>
             </div>
+            {moviesResponse && <Pagination
+                totalPages={moviesResponse.totalPages}
+                activePage={activePage}
+                onChange={page => setActivePage(page)}
+            />}
         </>
-    )
+    );
 }
 
 export default Catalog;
