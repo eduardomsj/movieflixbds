@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
-const Navbar = () => {
+type Props = {
+    children?: React.ReactNode;
+}
+
+const Navbar = ({ children }: Props) => {
     return (
-        <nav className="row bg-primary main-nav">
-            <div className="col">
-                <a href="/" className="main-nav-text">
-                    <h4>Movie Flix</h4>
-                </a>
-            </div>
-            <div className="col-auto justify-content-end">
-                
-            </div>
+        <nav className="main-nav">
+            <Link to="/" >
+                <h4 className="main-nav-text">MovieFlix</h4>
+            </Link>
+            {children}
         </nav>
     )
 }
