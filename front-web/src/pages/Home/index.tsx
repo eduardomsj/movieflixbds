@@ -1,6 +1,7 @@
 import React from 'react';
 import {ReactComponent as Image} from '../../core/assets/images/home-image.svg';
 import Navbar from '../../core/components/Navbar';
+import Auth from '../Auth';
 import './styles.scss';
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            <Auth />
             </div>
         </>
     )
