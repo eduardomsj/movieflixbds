@@ -1,9 +1,19 @@
-body{
+body {
     background-color: #525252 !important;
 }
 
-.catalog-container{
+.catalog-container {
     width: "100%";
     height: "100%";
     
+}
+
+.catalog-container-card {
+    width: 1170px;
+    margin-left: 90px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,260px);
+    grid-gap:30px 35px;
+    justify-content: space-between;
 }
