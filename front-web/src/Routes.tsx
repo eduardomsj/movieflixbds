@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Catalog from './pages/Catalog';
+import DetailMovies from './pages/Catalog/components/DetailMovies';
 import Home from './pages/Home';
 
 const Routes = () => {
@@ -13,6 +14,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/movies" exact>
                     <Catalog />
+                </Route>
+                <Route path="/movies/:movieId" exact>
+                    <DetailMovies />
                 </Route>
             </Switch>
         </BrowserRouter>
