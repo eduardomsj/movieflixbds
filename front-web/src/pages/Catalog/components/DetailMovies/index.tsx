@@ -8,6 +8,8 @@ import { Movie } from '../../../../core/types/movies';
 import DetailsCard from './components/DetailsCard';
 import CommentCard from './components/CommentCard';
 import ReviewCard from './components/ReviewCard';
+import DetailMovieLoader from '../LoaderMovies/DetailMovieLoader';
+import ReviewMovieLoader from '../LoaderMovies/ReviewMovieLoader';
 import './styles.scss';
 
 type ParamsType = {
@@ -35,11 +37,14 @@ const DetailMovies = () => {
             </Navbar>
             <Link to="/movies" className="back-container">
                     <h3 className="back-text">Voltar</h3>
-            </Link>            
-            <DetailsCard />
-            {isAllowedByRole(['ROLE_MEMBER']) &&
+            </Link>   
+            {isLoading ? <DetailMovieLoader /> : (         
+                <DetailsCard />
+            )}
+            {isLoading ? <ReviewMovieLoader /> : (
+            isAllowedByRole(['ROLE_MEMBER']) &&
                 <CommentCard id={movieId}/>
-            }
+            )}
             <div className="review-container">
                 {movieResponse?.reviews.map(review => (
                     <ReviewCard 

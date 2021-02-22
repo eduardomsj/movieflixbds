@@ -10,6 +10,7 @@ import ButtonLogout from '../../core/components/ButtonLogout';
 import Navbar from '../../core/components/Navbar';
 import FilterMovies, { FilterForm } from './components/FilterMovies'
 import Pagination from '../../core/components/Pagination';
+import MovieLoader from './components/LoaderMovies/MovieLoader';
 import './styles.scss';
 
 const Catalog = () => {
@@ -47,11 +48,12 @@ const Catalog = () => {
             <div className="catalog-container">
                 <FilterMovies onSearch={filter => getMovies(filter)} />
                 <div className="catalog-container-card">                    
-                    {moviesResponse?.content.map(movie => (
+                    {isLoading ? <MovieLoader /> : (
+                        moviesResponse?.content.map(movie => (
                         <Link to={`/movies/${movie.id}`}>
                             <CardMovies movie={movie} key={movie.id} />
                         </Link>
-                        )
+                        ))
                     )}
                 </div>
             </div>
