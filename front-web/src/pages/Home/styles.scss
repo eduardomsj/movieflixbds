@@ -1,14 +1,15 @@
-.home-container{
+.home-container {
     background-color:#525252;
     height: "100%";
     display: flex;
     padding-bottom: 19px;
  
 }
-.home-title{
+
+.home-title {
     height: 75px;
-    margin-top: 20px;
-    margin-left: 160px;
+    margin-top: 50px;
+    margin-left: 180px;
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
@@ -17,10 +18,11 @@
     letter-spacing: -0.015em;
     color: #FFFFFF;
 }
-.home-subtitle{
+
+.home-subtitle {
     width: 531px;
     height: 20px;
-    margin-left: 160px;
+    margin-left: 170px;
     margin-top: 20px;
     font-family: Open Sans;
     font-style: normal;
@@ -31,10 +33,10 @@
     color: #F2F2F2;
 }
 
-.home-image{
+.home-image {
     padding-top: 30px;
     margin-bottom: 0px;
     width: 500px;
     height: 320px;
-    margin-left: 140px;
+    margin-left: 180px;
 }

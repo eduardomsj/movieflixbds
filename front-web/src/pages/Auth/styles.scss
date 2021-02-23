@@ -1,4 +1,4 @@
-.form-content{
+.form-content {
 
     width: 400px;
     height: 500px;
@@ -10,7 +10,7 @@
     border-radius: 20px;
 }
 
-.form-title{
+.form-title {
     margin-top: 70px;
     font-family: Open Sans;
     font-style: normal;
@@ -23,7 +23,7 @@
     color: #FFFFFF;
 }
 
-.form-input-email{
+.form-input-email {
     width: 320px;
     height: 50px;
     margin-left: 50px;
@@ -35,7 +35,8 @@
     border-radius: 10px;
     outline: 0px !important;
 }
-.form-input-password{
+
+.form-input-password {
     width: 320px;
     height: 50px;
     padding-left: 30px;
@@ -48,16 +49,17 @@
     outline: 0px !important;
 }
 
-.input-eyes{
+.input-eyes {
     margin-left: -50px;
     color: #000;
     
 }
 
-.content-btn{
+.content-btn {
     margin-top: 50px;
 }
-.btn-form{
+
+.btn-form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +72,8 @@
     border-radius: 10px 0 0 10px;
     outline: 0px !important;
 }
-.btn-text{
+
+.btn-text {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
@@ -78,9 +81,9 @@
     text-align: center;
     letter-spacing: -0.015em;
     color: #000000;
-
 }
-.div-arrow{
+
+.div-arrow {
     background-color: #263238;
     width: 45px;
     height: 59px;
@@ -91,7 +94,7 @@
     color: #FFF
 }
 
-.input-invalid{
+.input-invalid {
     margin-left: 50px;
     color: #FFF !important;
 }

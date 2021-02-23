@@ -25,7 +25,7 @@ const CommentCard = ({ id }: ParamsType) => {
 
         makePrivateRequest({ url: `/reviews`, method: 'POST', data })
             .then(response => {
-                toast.info("Obrigado pela sua avaliação!")
+                toast.warning("Obrigado pela sua avaliação!")
                 history.go(0);
             })
             .catch(() => {
@@ -46,7 +46,7 @@ const CommentCard = ({ id }: ParamsType) => {
                     className="comment-input"
                     placeholder="Deixe sua avaliação aqui"
                     cols={2}
-                    rows={10}
+                    rows={4}                    
                     ref={register({ required: "Campo obrigatório!" })}
                 />
                 <button className="comment-btn">

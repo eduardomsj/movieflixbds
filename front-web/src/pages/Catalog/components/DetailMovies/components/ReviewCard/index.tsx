@@ -14,7 +14,7 @@ const ReviewCard = ({userReview, textReview}:Props) => {
         <div>
             <div style={{ display: 'flex' }}>
                 <FontAwesomeIcon icon={faStar} className="review-img" />
-                <p className="review-name" >{userReview}</p>
+                <p className="review-name">{userReview}</p>
             </div>
             <div style={{ display: 'block' }}>
                 <div className="review-form">

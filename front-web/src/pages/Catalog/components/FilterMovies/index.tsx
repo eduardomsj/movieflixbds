@@ -25,8 +25,7 @@ const FilterMovies = ({ onSearch }: Props) => {
 
     const handleChangeGenre = (genre: Genre) => {
         setGenre(genre);
-        onSearch({ genreId: genre?.id })
-        //getMovies({ genreId: genre?.id })
+        onSearch({ genreId: genre?.id })        
     }
 
     return (

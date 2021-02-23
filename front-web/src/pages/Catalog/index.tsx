@@ -50,8 +50,8 @@ const Catalog = () => {
                 <div className="catalog-container-card">                    
                     {isLoading ? <MovieLoader /> : (
                         moviesResponse?.content.map(movie => (
-                        <Link to={`/movies/${movie.id}`}>
-                            <CardMovies movie={movie} key={movie.id} />
+                        <Link to={`/movies/${movie.id}`} key={movie.id}>
+                            <CardMovies movie={movie} />
                         </Link>
                         ))
                     )}

@@ -3,10 +3,6 @@ export type MoviesResponse = {
     totalPages: number
 }
 
-export type ReviewResponse = {
-    contentReview: Review[]
-}
-
 export type Movie = {
     id: number,
     title: string,
@@ -18,17 +14,25 @@ export type Movie = {
     reviews: Review[]
 }
 
+export type ReviewResponse = {
+    contentReview: Review[]
+}
+
 export type Review = {
     id: number,
     text: string,
     movieId: number,
-    userId: number,
-    userName: string,
-    userEmail: string    
+    user: User,
 }
 
 export type Genre={
     id: number,
     name: string,
     movies?: Movie[]
+}
+
+export type User = {
+    id: number,
+    name: string,
+    email: string
 }

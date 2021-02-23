@@ -50,7 +50,7 @@ const DetailMovies = () => {
                     <ReviewCard 
                         key={review.id} 
                         textReview={review.text} 
-                        userReview={review.userName} 
+                        userReview={review.user.name} 
                     />
                 ))}
             </div>

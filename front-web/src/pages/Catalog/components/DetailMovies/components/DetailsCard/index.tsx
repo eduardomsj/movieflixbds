@@ -34,6 +34,6 @@ const DetailsCard = () => {
             </div>
         </div>
     )
-};
+}
 
 export default DetailsCard;

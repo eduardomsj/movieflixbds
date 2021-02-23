@@ -23,7 +23,7 @@ const Auth = () => {
             .then(response => {
                 saveSessionData(response.data)
                 history.push('/movies')
-                toast.info(`Olá ${data.username}, seja bem vindo(a)!`)
+                toast.warning(`Olá ${data.username}, seja bem vindo(a)!`)
             })
         .catch(() => {
             toast.error("Erro ao realizar login!")
