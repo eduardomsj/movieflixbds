@@ -58,6 +58,37 @@ const text = StyleSheet.create({
     },
     logoutText: {
         color: colors.black,
+    },    
+    cardTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        lineHeight: 25,
+        color: colors.white,
+        marginTop: 20,
+        marginLeft: 15,
+    },
+    cardYear: {
+        fontSize: 14,
+        fontWeight: '700',
+        lineHeight: 19,
+        color: colors.orange,
+        marginTop: 5,
+        marginLeft: 15,
+    },
+    cardSubTitle: {
+        fontSize: 16,
+        fontWeight: '400',
+        lineHeight: 22,
+        color: colors.grey,
+        marginTop: 5,
+        marginLeft: 15,
+    },
+    cardBtn: {
+        textTransform: 'uppercase',
+        color: colors.white,
+        fontSize: 14,
+        fontWeight: '700',
+        textAlign: 'center',
     },
 })
 
@@ -160,6 +191,38 @@ const theme = StyleSheet.create({
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10,
     },
+    scrollContainer: {
+        paddingTop: 50,
+        paddingBottom: 10,        
+        backgroundColor: colors.darkGrey,
+    }
+})
+
+const card = StyleSheet.create({
+    movieCard: {
+        width: 350,
+        height: 410,
+        backgroundColor: colors.lightGrey,
+        borderRadius: 10,
+        marginLeft: 20,
+        marginTop: 20,
+    },
+    movieImg: {
+        width: 350,
+        height: 228,
+        marginTop: 20,
+    },
+    formBtn: {
+        width: 320,
+        height: 40,
+        borderWidth: 1,
+        borderColor: colors.white,
+        borderRadius: 10,
+        marginLeft: 15,
+        marginTop: 10,
+        alignItems: 'center',
+        justifyContent: "center",
+    },
 })
 
 const nav = StyleSheet.create({
@@ -182,4 +245,4 @@ const nav = StyleSheet.create({
     },
 })
 
-export { colors, theme, text, nav };
+export { colors, theme, text, card, nav };
