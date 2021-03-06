@@ -56,6 +56,9 @@ const text = StyleSheet.create({
         color: colors.black,
         marginLeft: 100,
     },
+    logoutText: {
+        color: colors.black,
+    },
 })
 
 const theme = StyleSheet.create({
@@ -166,6 +169,16 @@ const nav = StyleSheet.create({
         color: colors.black,
         lineHeight: 25,
         marginLeft: 50,
+    },
+    logoutBtn: {
+        width: 60,
+        height: 30,
+        borderWidth: 1,
+        borderColor: colors.black,
+        borderRadius: 10,
+        marginRight: 10,
+        alignItems: "center",
+        justifyContent: "center",
     },
 })
 

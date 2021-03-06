@@ -59,3 +59,10 @@ export async function doLogout() {
         console.warn(e);
     }
 }
+
+const requests = {
+    login,
+    isAuthenticated,
+}
+
+export default requests;
