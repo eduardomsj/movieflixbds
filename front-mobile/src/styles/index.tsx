@@ -90,6 +90,20 @@ const text = StyleSheet.create({
         fontWeight: '700',
         textAlign: 'center',
     },
+    modalText: {
+        color: colors.black,
+        fontSize: 16,
+    },
+    selectText: {
+        color: colors.whiteIce,
+        fontSize: 16,
+        fontWeight: '400',
+        marginTop: 10,
+        marginLeft: 16,
+        lineHeight: 26,
+        width: 300,
+        height: 20,
+    },
 })
 
 const theme = StyleSheet.create({
@@ -191,11 +205,59 @@ const theme = StyleSheet.create({
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10,
     },
-    scrollContainer: {
-        paddingTop: 50,
+    scrollContainer: {        
         paddingBottom: 10,        
         backgroundColor: colors.darkGrey,
-    }
+    },
+    containerModal: {
+        width: deviceWidth,
+        height: deviceHeight,
+        backgroundColor: "#00000033",
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    contentModal: {
+        marginTop: "5%",
+        width: 300,
+        backgroundColor: colors.white,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 15,
+        paddingVertical: 20,
+    },
+    itemModal: {
+        marginVertical: 5,
+        width: 200,
+        padding: 20,
+        height: 30,
+        borderRadius: 10,
+        backgroundColor: colors.veryLightGrey,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    contentSelect: {
+        height: 85,
+        width: 350,
+        backgroundColor: colors.lightGrey,
+        borderRadius: 10,
+        marginLeft: 20,
+        marginTop: 20,
+    },    
+    cardSelect: {
+        width: 310,
+        height: 50,
+        borderWidth: 1,
+        borderColor: colors.white,
+        borderRadius: 10,
+        marginLeft: 20,
+        marginTop: 15,
+        flexDirection: 'row',
+    },
+    arrowDownCatalog: {
+        alignItems: 'flex-end',
+        marginHorizontal: -35,
+        marginTop: 18,
+    },
 })
 
 const card = StyleSheet.create({
@@ -239,7 +301,7 @@ const nav = StyleSheet.create({
         borderWidth: 1,
         borderColor: colors.black,
         borderRadius: 10,
-        marginRight: 10,
+        marginRight: 20,
         alignItems: "center",
         justifyContent: "center",
     },

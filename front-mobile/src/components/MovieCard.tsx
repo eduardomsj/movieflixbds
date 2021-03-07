@@ -8,11 +8,10 @@ interface MovieCardProps{
     title: String;
     subTitle: String;
     year: Number;
-    imgUrl: string;
-    synopsis: String;
+    imgUrl: string;    
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({id, title, subTitle, year, imgUrl, synopsis}) => {
+const MovieCard: React.FC<MovieCardProps> = ({id, title, subTitle, year, imgUrl}) => {
 
     const navigation = useNavigation();
 
