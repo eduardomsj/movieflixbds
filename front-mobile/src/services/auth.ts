@@ -7,8 +7,7 @@ interface AuthProps {
     password: string;
 }
 
-export async function login(userInfo: AuthProps) {
-    
+export async function login(userInfo: AuthProps) {    
     const data = queryString.stringify({
         ...userInfo,
         grant_type: "password"
@@ -30,7 +29,6 @@ export async function login(userInfo: AuthProps) {
 }
 
 async function setAsyncKeys(key: string, value: string) {
-
     try {
         await AsyncStorage.setItem(key, value)
     } catch(e){
@@ -39,10 +37,8 @@ async function setAsyncKeys(key: string, value: string) {
 }
 
 export async function isAuthenticated() {
-
     try {
         const token = await AsyncStorage.getItem('@token');
-
         return token ? true : false;
 
     } catch(e){
@@ -51,7 +47,6 @@ export async function isAuthenticated() {
 }
 
 export async function doLogout() {
-
     try {
         AsyncStorage.removeItem('@token');
 

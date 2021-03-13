@@ -34,7 +34,7 @@ const Catalog: React.FC = () => {
     }
 
     async function loadGenres() {
-        const res = await getGenres();
+        const res = await getGenres();        
         setGenres(res.data);
     };
 
