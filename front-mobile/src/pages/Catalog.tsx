@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, ScrollView, TouchableOpacity, Image, View, Text, Modal } from 'react-native';
-import { getMovies, getGenres } from '../services';
+import { getMovies, getGenres, getMoviesByGenre } from '../services';
 import { MovieCard } from '../components';
 import arrowDown from '../assets/arrow-down.png';
 import { theme, text } from '../styles';
@@ -21,14 +21,15 @@ const Catalog: React.FC = () => {
 
     const [genres, setGenres] = useState([
         {
-            id: null,
+            id: 0,
             name: null,
         }
     ]);
 
-    async function fillMovies() {
+    async function loadMovies() {
         setLoading(true);
-        const res = await getMovies();
+        const genreId = 0;
+        const res = await getMoviesByGenre(genreId);
         setMovies(res.data.content);
         setLoading(false);
     }
@@ -43,7 +44,7 @@ const Catalog: React.FC = () => {
     }, []);    
 
     useEffect(() => {
-        fillMovies();
+        loadMovies();
     }, []);  
     
     return (        
@@ -63,8 +64,8 @@ const Catalog: React.FC = () => {
                                         <TouchableOpacity
                                             key={gen.id}
                                             onPress={() => {
-                                                setMovie({ ...movie, genre: gen.name })
-                                                setShowGenres(!showGenres);
+                                                setMovie({ ...movie, genre: gen.name });
+                                                setShowGenres(!showGenres);                                                
                                             }}
                                             style={theme.itemModal}
                                         >

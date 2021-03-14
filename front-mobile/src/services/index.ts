@@ -22,9 +22,9 @@ export async function getMovies(){
     return res;
 }
 
-export async function getMoviesByGenre(){
+export async function getMoviesByGenre(genreId: number){
     const authToken = await userToken();     
-    const res = api.get(`/movies`,{
+    const res = api.get(`/movies?genreId=${genreId}`,{
             headers:{
                 'Authorization': `Bearer ${authToken}`,
             },

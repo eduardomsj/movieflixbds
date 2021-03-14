@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, Image, ActivityIndicator, ScrollView, TextInput } from 'react-native';
+import { Text, View, Image, ActivityIndicator } from 'react-native';
+import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+import Toast from 'react-native-tiny-toast';
 import { getMoviesById, createReview } from '../services';
 import star from '../assets/star.png';
 import { theme, text } from '../styles';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+
 
 interface MovieDetailsProps {
     route: Object;
@@ -18,22 +21,29 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({
     },  
     role   
 }) => {
-
+    const navigation = useNavigation();
     const [loading, setLoading] = useState(false);
     const [movie, setMovie] = useState({
         id: null,
         title: null,
         subTitle: null,
         year: null,
-        imgUrl: null,
+        imgUrl: " ",
         synopsis: null,
-        reviews: [{ id: null, text: null, user: [{ id: null, name: null}] }],
+        reviews: [{ id: null, text: null, user: [{ id: null, name: ""}] }],
     });
 
     const [userReview, setUserReview] = useState({
         movieId: null,
         text: '',
     });
+
+    function checkText() {
+        if (!userReview.text.trim()) {
+            alert('Favor inserir algum texto!');
+            return;
+        }
+    }
 
     async function loadMovieData() {
         setLoading(true);
@@ -42,9 +52,19 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({
         setLoading(false);
     } 
     
-    async function handlerReview() {        
-        const data = { movieId: movie.id, text: userReview.text };        
-        await createReview(data);
+    async function handlerReview() { 
+        setLoading(true);
+        checkText();
+        try {             
+            const data = { movieId: movie.id, text: userReview.text };        
+            await createReview(data);            
+            Toast.showSuccess("Avaliação salva com sucesso!");
+            setUserReview({ movieId: null, text: '' });
+            loadMovieData();
+        } catch {
+            Toast.show("Não foi possível salvar");
+        }
+        setLoading(false);
     }
 
     useEffect(() => {
@@ -71,7 +91,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({
                             </ScrollView>
                         </View>
                     )}
-                    {role == "ROLE_MEMBER" && ( 
+                    {role != "ROLE_MEMBER" && ( 
                         <View style={theme.reviewContent}>
                             <TextInput
                                 style={theme.reviewTextInput}

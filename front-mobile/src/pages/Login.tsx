@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Image, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Toast from 'react-native-tiny-toast';
 import { login } from '../services/auth';
+import BackButton from '../components/BackButton';
 import eyesOpened from '../assets/eyes-opened.png';
 import eyesClosed from '../assets/eyes-closed.png';
 import arrow from '../assets/arrow.png';
@@ -14,13 +16,18 @@ const Login: React.FC = () => {
     const [userFetchData, setUserFetchData] = useState({});
     const [userInfo, setUserInfo] = useState({ username: "", password: "" });
 
-    async function handleLogin() {       
-        const data = await login(userInfo);
-        setUserFetchData(data);
-        navigation.navigate("Catalog");
+    async function handleLogin() {
+        try {       
+            const data = await login(userInfo);
+            setUserFetchData(data);
+            navigation.navigate("Catalog");
+        } catch (res) {
+            Toast.show("Login inválido")
+        }
     }
 
     return (
+        <>        
         <View style={theme.container}>
             <View style={theme.card}>
                 <Text style={text.titleLogin}>LOGIN</Text>
@@ -73,6 +80,7 @@ const Login: React.FC = () => {
                 </View>
             </View>
         </View>
+        </>
     )
 }
 

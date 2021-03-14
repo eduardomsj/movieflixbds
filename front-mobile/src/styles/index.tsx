@@ -354,12 +354,11 @@ const theme = StyleSheet.create({
     },
     detailsContentComment: {
         width:360,
-        height:310,
+        height:330,
         marginTop:20,
-        marginLeft: 17,
+        marginLeft: 17,        
         backgroundColor: colors.lightGrey,
         borderRadius: 20,
-        
     },
     detailsContentName: {
         flexDirection: "row",
@@ -371,8 +370,8 @@ const theme = StyleSheet.create({
         marginTop:22,
     },
     detailsInputComment: {
-        width: 320,
-        height:70,
+        width: 312,
+        height:60,
         marginLeft:25,
         marginTop:5,
         borderWidth: 1,
@@ -456,6 +455,12 @@ const nav = StyleSheet.create({
         marginRight: 20,
         alignItems: "center",
         justifyContent: "center",
+    },
+    backBtn: {
+
+    },
+    backImg: {
+
     },
 })
 

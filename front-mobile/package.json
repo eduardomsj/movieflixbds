@@ -23,6 +23,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-gesture-handler": "~1.8.0",
     "react-native-screens": "~2.15.2",
+    "react-native-tiny-toast": "^1.0.7",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import { isAuthenticated, doLogout } from "../services/auth";
-import { nav, text } from "../styles";
+import React, { useEffect, useState } from 'react';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { Text, TouchableOpacity } from 'react-native';
+import { isAuthenticated, doLogout } from '../services/auth';
+import { nav, text } from '../styles';
 
 const NavBar: React.FC = () => {
     
