@@ -7,7 +7,6 @@ import { getMoviesById, createReview } from '../services';
 import star from '../assets/star.png';
 import { theme, text } from '../styles';
 
-
 interface MovieDetailsProps {
     route: Object;
     params: Object;
@@ -21,6 +20,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({
     },  
     role   
 }) => {
+    
     const navigation = useNavigation();
     const [loading, setLoading] = useState(false);
     const [movie, setMovie] = useState({

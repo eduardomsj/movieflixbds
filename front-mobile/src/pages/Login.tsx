@@ -3,7 +3,6 @@ import { Image, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Toast from 'react-native-tiny-toast';
 import { login } from '../services/auth';
-import BackButton from '../components/BackButton';
 import eyesOpened from '../assets/eyes-opened.png';
 import eyesClosed from '../assets/eyes-closed.png';
 import arrow from '../assets/arrow.png';

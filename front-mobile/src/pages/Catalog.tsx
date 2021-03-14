@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, ScrollView, TouchableOpacity, Image, View, Text, Modal } from 'react-native';
-import { getMovies, getGenres, getMoviesByGenre } from '../services';
+import { getGenres, getMoviesByGenre } from '../services';
 import { MovieCard } from '../components';
 import arrowDown from '../assets/arrow-down.png';
 import { theme, text } from '../styles';
 
 const Catalog: React.FC = () => {
+    
     const [loading, setLoading] = useState(false);
     const [showGenres, setShowGenres] = useState(false);
     const [movies, setMovies] = useState([]);

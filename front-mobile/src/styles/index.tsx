@@ -104,7 +104,7 @@ const text = StyleSheet.create({
         width: 300,
         height: 20,
     },
-    detailsTitle:{
+    detailsTitle: {
         color: colors.white,
         fontSize: 24,
         fontWeight: "bold",
@@ -112,7 +112,7 @@ const text = StyleSheet.create({
         marginLeft: 25,
         lineHeight: 33,
     },    
-    detailsYear:{
+    detailsYear: {
         color: colors.orange,
         fontSize: 24,
         fontWeight: "700",
@@ -120,7 +120,7 @@ const text = StyleSheet.create({
         marginLeft: 25,
         lineHeight: 33,
     },
-    detailsSubTitle:{
+    detailsSubTitle: {
         color: colors.gray,
         fontSize: 18,
         fontWeight: "normal",
@@ -128,7 +128,7 @@ const text = StyleSheet.create({
         marginLeft: 25,
         lineHeight: 33,
     },
-    detailsSynopsisTitle:{
+    detailsSynopsisTitle: {
         color: colors.white,
         fontSize: 22,
         fontWeight: "bold",
@@ -136,7 +136,7 @@ const text = StyleSheet.create({
         marginLeft: 25,
         lineHeight: 30,
     },
-    detailsSynopsisText:{
+    detailsSynopsisText: {
         color: colors.white,
         fontSize: 16,
         fontWeight: "normal",
@@ -144,7 +144,7 @@ const text = StyleSheet.create({
         marginLeft: 19,
         lineHeight: 22,
     },
-    detailsTitleComment:{
+    detailsTitleComment: {
         marginTop:15,
         marginLeft: 25,
         color: colors.white,
@@ -152,7 +152,7 @@ const text = StyleSheet.create({
         fontWeight: "bold",
         lineHeight: 30,
     },
-    detailsNameComment:{
+    detailsNameComment: {
         marginTop:15,
         marginLeft: 10,
         color: colors.white,
@@ -160,7 +160,7 @@ const text = StyleSheet.create({
         fontWeight: "bold",
         lineHeight: 30,
     },
-    detailsComment:{
+    detailsComment: {
         marginTop:13,
         marginLeft: 20,
         color: colors.grey,
@@ -338,7 +338,7 @@ const theme = StyleSheet.create({
         borderRadius: 20,
         paddingBottom:20,
     },
-    detailsImage:{
+    detailsImage: {
         width:360,
         height:220,
         marginTop:15,
@@ -408,7 +408,6 @@ const theme = StyleSheet.create({
         marginLeft:20,
         justifyContent: 'center',
     },
-
 })
 
 const card = StyleSheet.create({
@@ -455,13 +454,7 @@ const nav = StyleSheet.create({
         marginRight: 20,
         alignItems: "center",
         justifyContent: "center",
-    },
-    backBtn: {
-
-    },
-    backImg: {
-
-    },
+    },    
 })
 
 export { colors, theme, text, card, nav };

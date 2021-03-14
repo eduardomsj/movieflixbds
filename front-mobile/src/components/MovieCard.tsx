@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { theme, text, card } from '../styles';
+import { text, card } from '../styles';
 
 interface MovieCardProps{
     id: Number;

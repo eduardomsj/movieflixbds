@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Text } from 'react-native';
 import { Home, Login, Catalog, MovieDetails } from '../pages';
-import { BackButton, NavBar } from '../components';
+import { NavBar } from '../components';
 import { colors, nav } from '../styles';
 
 const Stack = createStackNavigator();

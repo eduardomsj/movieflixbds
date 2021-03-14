@@ -1,8 +1,8 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export const api = axios.create({
-    baseURL: "https://ejr-movieflix.herokuapp.com",
+export const api = axios.create({    
+    baseURL: "http://localhost:8080",
 });
 
 export const TOKEN = 'Basic bW92aWVmbGl4YmRzOm1vdmllZmxpeGJkczEyMw==';

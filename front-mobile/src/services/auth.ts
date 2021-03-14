@@ -7,7 +7,8 @@ interface AuthProps {
     password: string;
 }
 
-export async function login(userInfo: AuthProps) {    
+export async function login(userInfo: AuthProps) {  
+      
     const data = queryString.stringify({
         ...userInfo,
         grant_type: "password"
